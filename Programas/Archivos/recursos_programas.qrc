@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="Perros">
+    <file>caramelo2.jpg</file>
+    <file>caramelo1.jpg</file>
+  </qresource>
+  <qresource prefix="Personaje">
+    <file>Anime.png</file>
+  </qresource>
+  <qresource prefix="Logos">
+    <file>Logo.png</file>
+  </qresource>
+</RCC>
