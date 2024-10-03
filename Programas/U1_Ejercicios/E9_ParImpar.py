@@ -14,7 +14,6 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.btn_calc.clicked.connect(self.calcular)
 
-
     # Área de los Slots
     def calcular(self):
         n = int(self.txt_num.text())

@@ -1,5 +1,4 @@
 import sys
-
 import numpy
 from PyQt5 import uic, QtWidgets
 qtCreatorFile = "E7_Pitagoras.ui"  # Nombre del archivo aquí.
@@ -20,7 +19,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def calcular(self):
         a = int(self.txt_a.text())
         b = int(self.txt_b.text())
-        c = a**2 + b**2
+        c = numpy.sqrt(a**2 + b**2)
         self.txt_res.setText(str(round(c,2)))
 
 if __name__ == "__main__":

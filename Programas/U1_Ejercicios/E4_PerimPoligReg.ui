@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>539</width>
+    <width>555</width>
     <height>219</height>
    </rect>
   </property>
@@ -67,7 +67,7 @@
      <rect>
       <x>20</x>
       <y>70</y>
-      <width>341</width>
+      <width>371</width>
       <height>31</height>
      </rect>
     </property>
@@ -80,13 +80,13 @@
      </font>
     </property>
     <property name="text">
-     <string>Número de lados del poligono regular:</string>
+     <string>Longitud de uno de los lados del poligono:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="txt_long">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>390</x>
       <y>70</y>
       <width>81</width>
       <height>31</height>
@@ -110,7 +110,7 @@
    <widget class="QComboBox" name="cb_medida">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>480</x>
       <y>70</y>
       <width>71</width>
       <height>31</height>
@@ -234,7 +234,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>539</width>
+     <width>555</width>
      <height>26</height>
     </rect>
    </property>

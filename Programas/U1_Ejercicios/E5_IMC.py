@@ -5,8 +5,6 @@ from PyQt5 import uic, QtWidgets
 
 qtCreatorFile = "E5_IMC.ui"  # Nombre del archivo aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
-
-
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
@@ -18,17 +16,14 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.btn_calc.clicked.connect(self.calcular)
         except Exception as e:
             print(e)
-
         try:
             self.cb_peso.currentIndexChanged.connect(self.cambiarAltura)
         except Exception as e:
             print(e)
-
         try:
             self.cb_altura.currentIndexChanged.connect(self.cambiarPeso)
         except Exception as e:
             print(e)
-
     # Área de los Slots
     def calcular(self):
         peso = float(self.txt_peso.text())
@@ -43,7 +38,6 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def cambiarPeso(self):
         self.cb_peso.setCurrentIndex(self.cb_altura.currentIndex())
-
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
