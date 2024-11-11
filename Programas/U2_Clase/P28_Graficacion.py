@@ -14,3 +14,4 @@ plt.plot(x,datos, marker="o", color="green") #visualiza datos, signo y  colores
 plt.xticks(x) #visualiza numeros de abajo
 plt.grid(True) #visualiza el grid
 plt.show() #visualiza la grafica
+

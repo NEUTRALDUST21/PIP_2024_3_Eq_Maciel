@@ -26,7 +26,6 @@ class MyApp(QtWidgets. QMainWindow,Ui_MainWindow):
         else:
             print("Debes seleccionar una opcion..")
 
-
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = MyApp()

@@ -21,3 +21,5 @@ for i in range(1, len(instancia)):
     else:
         break
     del instancia[0]
+
+

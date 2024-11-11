@@ -13,15 +13,12 @@ class MyApp(QtWidgets. QMainWindow,Ui_MainWindow):
         self.index_nombre = 0
         self.txt_nombre.setText(self.lista_nombres[self.index_nombre])
         self.txt_nombre.setEnabled(False)
-
         self.btn_control.clicked.connect(self.control)
-
         self.hiloSegundoPlano = QtCore.QTimer() #
         self.hiloSegundoPlano.timeout.connect(self.contar)
 
     def control(self):
         texto_boton = self.btn_control.text()
-
         if texto_boton == "INICIAR":
             self.index_nombre = 0
             self.hiloSegundoPlano.start(10) #Inicia el hilo en segundo plano # valor milisengundos (500) cambia cada medio segundo
@@ -42,3 +39,4 @@ if __name__ == '__main__':
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
+

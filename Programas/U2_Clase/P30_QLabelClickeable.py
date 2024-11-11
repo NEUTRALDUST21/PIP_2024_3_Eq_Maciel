@@ -17,3 +17,5 @@ def clickable(widget):
   filter = Filter(widget)
   widget.installEventFilter(filter)
   return filter.clicked
+
+

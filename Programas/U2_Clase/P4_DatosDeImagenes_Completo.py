@@ -32,7 +32,7 @@ class MyApp(QtWidgets. QMainWindow,Ui_MainWindow):
         self.txt_ocupacion.setText(self.datos_imagenes[self.clave_imagen][2])
         self.txt_pasatiempo.setText(self.datos_imagenes[self.clave_imagen][3])
 
-        # Area de los Slots
+    # Area de los Slots
     def atras(self):
         print(self.clave_imagen)
         if self.clave_imagen >= 2:
@@ -59,3 +59,4 @@ if __name__ == '__main__':
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
+

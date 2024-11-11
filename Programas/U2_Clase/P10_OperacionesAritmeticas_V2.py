@@ -29,9 +29,9 @@ class MyApp(QtWidgets. QMainWindow,Ui_MainWindow):
         ####
         self.txt_resultado.setText(str(resultado))
 
-
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
+

@@ -7,7 +7,6 @@ class MyApp(QtWidgets. QMainWindow,Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
-
         # Area de los Signals
         #self.rb_soltero.clicked.connect(self.soltero)
         #self.rb_casado.clicked.connect(self.casado)
@@ -42,3 +41,4 @@ if __name__ == '__main__':
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
+

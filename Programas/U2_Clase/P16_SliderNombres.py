@@ -29,13 +29,11 @@ class MyApp(QtWidgets. QMainWindow,Ui_MainWindow):
         self.index_nombre += 1
         self.index_nombre %= len(self.lista_nombres)
         self.txt_nombre.setText(self.lista_nombres[self.index_nombre])
-
-
     # Area de los Slots
-
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
+

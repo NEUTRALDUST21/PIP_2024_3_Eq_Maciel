@@ -11,3 +11,7 @@ rnd.shuffle(preguntas) # desordena las preguntas
 for pregunta in preguntas: # desordena las opciones
     rnd.shuffle(pregunta[2])
     print(pregunta)
+
+
+
+

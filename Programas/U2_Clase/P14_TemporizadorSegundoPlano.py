@@ -25,9 +25,9 @@ class MyApp(QtWidgets. QMainWindow,Ui_MainWindow):
 
     # Area de los Slots
 
-
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
+

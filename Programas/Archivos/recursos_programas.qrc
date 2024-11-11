@@ -3,8 +3,31 @@
     <file>caramelo2.jpg</file>
     <file>caramelo1.jpg</file>
   </qresource>
+  <qresource prefix="U2_MMRM">
+    <file>pera.png</file>
+    <file>manzana.png</file>
+    <file>fresa.png</file>
+    <file>desc.png</file>
+    <file>coco.png</file>
+  </qresource>
+  <qresource prefix="U2_IMC">
+    <file>IMC_Bajo.png</file>
+    <file>IMC_Normal.png</file>
+    <file>IMC_Obesidad.png</file>
+    <file>IMC_Sobrepeso.png</file>
+    <file>IMCTabla.png</file>
+  </qresource>
   <qresource prefix="Personaje">
     <file>Anime.png</file>
+  </qresource>
+  <qresource prefix="U2_PPT">
+    <file>default.jpg</file>
+    <file>papel.jpg</file>
+    <file>piedra.jpg</file>
+    <file>tijeras.jpg</file>
+  </qresource>
+  <qresource prefix="U2_LU">
+    <file>bulb.png</file>
   </qresource>
   <qresource prefix="Logos">
     <file>Logo.png</file>

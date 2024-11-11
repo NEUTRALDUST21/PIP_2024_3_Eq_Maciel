@@ -12,12 +12,11 @@ class MyApp(QtWidgets. QMainWindow,Ui_MainWindow):
         self.cb_soltero.toggled.connect(self.soltero) #self.rb_soltero.clicked.connect(self.soltero)
         self.cb_casado.toggled.connect(self.casado) #self.rb_casado.clicked.connect(self.casado)
         self.cb_unionlibre.toggled.connect(self.unionlibre) #self.rb_unionlibre.clicked.connect(self.unionlibre)
-
         self.cb_perro.toggled.connect(self.perro)
         self.cb_gato.toggled.connect(self.gato)
         self.cb_hamster.toggled.connect(self.hamster)
 
-        # Area de los Slots
+    # Area de los Slots
     def soltero(self):
         check = self.cb_soltero.isChecked()
         if check:
@@ -36,7 +35,6 @@ class MyApp(QtWidgets. QMainWindow,Ui_MainWindow):
             print("Unionlibre")
         else:
             print("se desmarco unionlibre")
-
 
     def perro(self):
         check = self.cb_perro.isChecked()
