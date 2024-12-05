@@ -14,7 +14,6 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   if(Serial.avalible()>0){
-
     int idx_led = Serial.readString().toInt()-1;
     estados[idx_led] = !estados[idx_led];
     digitalWrite(led[idx_led],estados[idx_led]);

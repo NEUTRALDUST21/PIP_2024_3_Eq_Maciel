@@ -1,9 +1,7 @@
 import sys
-from multiprocessing.reduction import duplicate
 
 from PyQt5 import QtWidgets
 
-#from P3_Ejemplo_JuegoGrafica import Plantilla_Juego as grafica
 import Plantilla_Juego as grafica
 import matplotlib.pyplot as plt
 
@@ -29,14 +27,11 @@ class MyApp(QtWidgets.QMainWindow, grafica.Ui_MainWindow):
         self.yMax = 5
         self.yMin = -5
 
-
         #################################################################################
-        #                Jugador  Computadora
-
-        self.enemigos = [] ## enenmigos
-        self.jugador = [0, 0] # jugador 1
-        self.enemigos_vivos   ####
-
+        #
+        self.enemigos = []  # enemigos
+        self.jugador = [0, 0]  # jugador 1
+        self.enemigos_vivos = 0
         ##############################################
 
         self.limpiar()
@@ -51,20 +46,21 @@ class MyApp(QtWidgets.QMainWindow, grafica.Ui_MainWindow):
             self.jugador = [0, 0] #vuelve al jugar al centro
 
             import random as rnd
-            #computadora
+            #posiciona a los enemigos en posiciones aleatorias
 
-            total_enemigos = 3  # numero de enemigos
+            total_enemigos = 6
+            self.enemigos_vivos = total_enemigos
             self.enemigos = []
             while total_enemigos > 0:
                 new_enemigo = [rnd.randrange(self.xMin, self.xMax),
-                                  rnd.randrange(self.yMin, self.yMax)]
-                # Comprueba que las coordenada del eenmigo no esten superpuestas con otra enemigo
+                                      rnd.randrange(self.yMin, self.yMax)]
+                #comprueba que las coordenadas del enemigo no esten superpuestas con otro enemigo
                 duplicated = False
                 if new_enemigo[0] == self.jugador[0] and new_enemigo[1] == self.jugador[1]:
                     duplicated = True
                 else:
                     for enemigo in self.enemigos:
-                        if new_enemigo[0] == new_enemigo[0] and enemigo[1] == new_enemigo[1]:
+                        if enemigo[0] == new_enemigo[0] and enemigo[1] == new_enemigo[1]:
                             duplicated = True
                             break
 
@@ -79,39 +75,34 @@ class MyApp(QtWidgets.QMainWindow, grafica.Ui_MainWindow):
 
     def mover(self):
         nombre_boton = self.sender().objectName()
-        accion = nombre_boton.split("_")[1] #[0] = btn -- [1] = abajo
+        accion = nombre_boton.split("_")[1]  # [0] = btn -- [1] = abajo
         print(nombre_boton, " accion:", accion)
         #UBICACION ACTUAL EN EL PLANO DEL USUARIO...
-        Xusuario = self.jugador[0] # [0] = vacio [0][0] = valor de X del usuario
-        Yusuario = self.jugador[1] # [1] = vacio [0][1] = valor de Y del usuario
-
-        if accion == "arriba": #     v  => valor de y
+        Xusuario = self.jugador[0]  # [0] = valor de X del usuario
+        Yusuario = self.jugador[1]  # [1] = valor de Y del usuario
+        if accion == "arriba":  # v  => valor de y
             if Yusuario + 1 <= self.yMax:
                 self.jugador[1] = Yusuario + 1
             else:
                 self.jugador[1] = self.yMin
-
-        elif accion == "abajo": #      v  => valor de y
+        elif accion == "abajo":  # v  => valor de y
             if Yusuario - 1 >= self.yMin:
                 self.jugador[1] = Yusuario - 1
             else:
                 self.jugador[1] = self.yMax
-
-        elif accion == "izquierda": #  v  => valor de x
+        elif accion == "izquierda":  # v  => valor de x
             if Xusuario - 1 >= self.xMin:
-                self.jugador[0][0] = Xusuario - 1
+                self.jugador[0] = Xusuario - 1
             else:
-                self.jugador[0][0] = self.xMax
-
-        elif accion == "derecha": #    v  => valor de x
+                self.jugador[0] = self.xMax
+        elif accion == "derecha":  # v  => valor de x
             if Xusuario + 1 <= self.xMax:
                 self.jugador[0] = Xusuario + 1
             else:
                 self.jugador[0] = self.xMin
-
         else: #centro
-            self.jugador[0][0] = 0 # [0] = vacio [0][0] = valor de X del usuario
-            self.jugador[0][1] = 0 # [0] = vacio [0][1] = valor de Y del usuario
+            self.jugador[0] = 0
+            self.jugador[1] = 0
         self.limpiar()
         self.graficar()
 
@@ -144,28 +135,37 @@ class MyApp(QtWidgets.QMainWindow, grafica.Ui_MainWindow):
                      markeredgecolor="black",  # color del borde del marcador
                      )
 
-        #POSICIONA A LA COMPUTADORA EN EL GRAFICO
+        #POSICIONA A LOS ENEMIGOS EN EL GRAFICO
         for enemigo in self.enemigos:
-            self.ax.plot(self.enemigo[0], self.enemigo[1],
-                     marker="o",  # o . *  x   1
-                     markersize=8,
-                     markerfacecolor="green",  # color interno del marcador
-                     markeredgewidth=1,  # tamaño del borde del marcador
-                     markeredgecolor="black",  # color del borde del marcador
-                     )
+            self.ax.plot(enemigo[0], enemigo[1],
+                         marker="o",  # o . *  x   1
+                         markersize=8,
+                         markerfacecolor="green",  # color interno del marcador
+                         markeredgewidth=1,  # tamaño del borde del marcador
+                         markeredgecolor="black",  # color del borde del marcador
+                         )
 
         self.canvas.draw() #DIBUJA EL GRAFICO
 
-        #COMPRUEBA CADA QUE SE GRAFICA SI EL USUARIO ALCANZO A LA COMPUTADORA
+        #COMPRUEBA CADA QUE SE GRAFICA SI EL USUARIO ALCANZO A ALGUN ENEMIGO
         #SI LAS COORDENADAS DE AMBOS ESTAN EN LA MISMA POSICION, ENTONCES EL USUARIO ALCANZO
-        # A LA COMPUTADORA..
+        # AL ENEMIGO..
         for enemigo in self.enemigos:
             if self.jugador[0] == enemigo[0] and self.jugador[1] == enemigo[1]:
+                self.enemigos_vivos-=1
+                #PEND: eliminar al enemigo de la lista
                 self.limpiar()
+                self.graficar()
                 m = QtWidgets.QMessageBox()
-                m.setText("Has Ganado")
+                m.setText("Has Eliminado a un enemigo!")
                 m.exec_()
-                self.btn_action.setText("INICIAR")
+
+        if self.enemigos_vivos == 0:
+            self.limpiar()
+            m = QtWidgets.QMessageBox()
+            m.setText("Has Ganado!")
+            m.exec_()
+            self.btn_action.setText("INICIAR")
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
@@ -173,8 +173,9 @@ if __name__ == "__main__":
     window.show()
     sys.exit(app.exec_())
 
-    #Tarea
-    #1. agregar el contador de tiempo
-    #2. agregar un contador visual de enemigos restantes o enemigos destruidos
-    #3. hacer que desaparesca visualmente un enemigo que ya me comi
-    #4. agregar diseño al programa (incluida imagenes-logos)
+##TAREA:
+#1.- Agregar el contador de tiempo
+#2.- Agregar un contador visual de enemigos restantes o enemigos destruidos
+#3.- Hacer que desaparezca visualmente un enemigo que ya elimine
+#4.- Agregar diseño al programa (incluidas imagenes-logos)
+
