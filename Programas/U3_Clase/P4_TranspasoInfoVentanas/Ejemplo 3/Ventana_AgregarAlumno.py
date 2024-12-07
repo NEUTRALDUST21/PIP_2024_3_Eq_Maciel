@@ -1,9 +1,8 @@
-
+import sys
 from PyQt5 import uic, QtWidgets, QtCore
 
 qtCreatorFile3 = "Ventana_AgregarAlumno.ui"  # Nombre del archivo aquí.
 Ui_dialog, QtBaseClass3 = uic.loadUiType(qtCreatorFile3)
-
 
 class MyDialog(QtWidgets.QDialog, Ui_dialog):
     def __init__(self,  rPrincipal):
@@ -14,17 +13,15 @@ class MyDialog(QtWidgets.QDialog, Ui_dialog):
         # Área de los Signals / Configuracion
         self.acceso = rPrincipal
 
-        self.btn_agregar.clicked.connect(self.agregar)
-
+        self.btnAgregar.clicked.connect(self.Agregar)
 
     # Área de los Slots
-    def agregar(self):
-        try:
-            nombre = self.txt_nombre.text()
+    def Agregar(self):
+        n = self.txtNombre.text()
 
-            self.acceso.datos_alumnos.append([nombre, [], 0])
-            self.acceso.lw_lista_alumnos.addItem(nombre)
+        self.acceso.datosAlumnos.append([n, [0, 0, 0], "NA"])
+        self.acceso.listAlumnos.addItem(n)
 
-            self.close()
-        except Exception as error:
-            print(error)
+        #self.acceso.usuario = None
+
+        self.close()

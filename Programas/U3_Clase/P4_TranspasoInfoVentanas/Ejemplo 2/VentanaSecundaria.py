@@ -1,5 +1,6 @@
-
+import sys
 from PyQt5 import uic, QtWidgets, QtCore
+
 
 qtCreatorFile3 = "Second_RecepcionInfo.ui"  # Nombre del archivo aquí.
 Ui_dialog, QtBaseClass3 = uic.loadUiType(qtCreatorFile3)

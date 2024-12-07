@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import uic, QtWidgets, QtCore
-
 import VentanaSecundaria
+
 ##########################################################################
 
 qtCreatorFile1 = "Main_EnvioInfo.ui"  # Nombre del archivo aquí.
@@ -12,7 +12,9 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow1):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow1.__init__(self)
         self.setupUi(self)
+
         # Área de los Signals / Configuracion
+        self.dialogo = VentanaSecundaria.MyDialog()
         self.btn_sumar.clicked.connect(self.sumar)
 
     # Área de los Slots
@@ -21,13 +23,15 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow1):
         b = int(self.txt_b.text())
         r = a + b
 
-        self.dialogo = VentanaSecundaria.MyDialog()
         self.dialogo.setModal(True)
         self.dialogo.txt_resultado.setText(str(r))
         self.dialogo.show()
 
 ##########################################################################
 
+    # aqui iva el dialoc ottra bentana
+
+##########################################################################
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

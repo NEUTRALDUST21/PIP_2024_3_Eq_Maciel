@@ -6,95 +6,89 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>513</width>
-    <height>274</height>
+    <width>437</width>
+    <height>433</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btn_sumar">
+   <widget class="QPushButton" name="btnSumar">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>120</y>
-      <width>191</width>
-      <height>61</height>
+      <x>150</x>
+      <y>160</y>
+      <width>221</width>
+      <height>81</height>
      </rect>
     </property>
-    <property name="text">
-     <string>SUMA</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txt_num1">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>10</y>
-      <width>191</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;MS Serif&quot;;</string>
     </property>
     <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <string>Sumar</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>87</x>
-      <y>20</y>
-      <width>61</width>
+      <x>60</x>
+      <y>60</y>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;MS Serif&quot;;</string>
+    </property>
     <property name="text">
-     <string>Número 1:</string>
+     <string>Numero 1:</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>70</y>
-      <width>71</width>
-      <height>31</height>
+      <x>70</x>
+      <y>120</y>
+      <width>51</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Número 2:</string>
+     <string>Numero 2:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txt_num2">
+   <widget class="QLineEdit" name="txtNum1">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>60</y>
-      <width>191</width>
+      <x>200</x>
+      <y>50</y>
+      <width>151</width>
       <height>41</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <bold>true</bold>
-     </font>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;MS Serif&quot;;</string>
     </property>
     <property name="text">
-     <string/>
+     <string>E</string>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+   </widget>
+   <widget class="QLineEdit" name="txtNum2">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>100</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;MS Serif&quot;;</string>
+    </property>
+    <property name="text">
+     <string>E</string>
     </property>
    </widget>
   </widget>
@@ -103,8 +97,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>513</width>
-     <height>24</height>
+     <width>437</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

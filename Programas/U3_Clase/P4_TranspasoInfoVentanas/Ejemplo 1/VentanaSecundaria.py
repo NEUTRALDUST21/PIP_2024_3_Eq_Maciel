@@ -13,4 +13,3 @@ class MyDialog(QtWidgets.QDialog, Ui_dialog):
         # Área de los Signals / Configuracion
 
     # Área de los Slots
-

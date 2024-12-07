@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import uic, QtWidgets, QtCore
 import VentanaSecundaria
+
 ##########################################################################
 
 qtCreatorFile1 = "Main_RecepcionInfo.ui"  # Nombre del archivo aquí.
@@ -17,14 +18,15 @@ class MyMainWindow(QtWidgets.QMainWindow, Ui_MainWindow1):
 
     # Área de los Slots
     def sumar(self):
-        # manda la referencia de la pantalla principal al dialog
-        self.dialogo = VentanaSecundaria.MyDialog(self)
-
+        self.dialogo = VentanaSecundaria.MyDialog(self) #Mandar referencia de la main window
         self.dialogo.setModal(True)
         self.dialogo.show()
 
 ##########################################################################
 
+
+
+##########################################################################
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

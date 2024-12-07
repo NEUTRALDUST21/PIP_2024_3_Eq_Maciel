@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>272</width>
-    <height>195</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,23 +16,23 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>30</y>
-     <width>58</width>
-     <height>16</height>
+     <x>40</x>
+     <y>20</y>
+     <width>47</width>
+     <height>13</height>
     </rect>
    </property>
    <property name="text">
     <string>Nombre:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="txt_nombre">
+  <widget class="QLabel" name="lblNombre">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>29</y>
-     <width>121</width>
-     <height>21</height>
+     <x>90</x>
+     <y>20</y>
+     <width>81</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
@@ -42,10 +42,10 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>60</y>
-     <width>58</width>
-     <height>16</height>
+     <x>30</x>
+     <y>50</y>
+     <width>51</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -55,10 +55,10 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>90</y>
-     <width>58</width>
-     <height>16</height>
+     <x>30</x>
+     <y>100</y>
+     <width>51</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -68,57 +68,57 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>120</y>
-     <width>58</width>
-     <height>16</height>
+     <x>30</x>
+     <y>150</y>
+     <width>51</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
     <string>Parcial 3:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txt_parcial1">
+  <widget class="QLineEdit" name="txtParcial1">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>58</y>
-     <width>113</width>
-     <height>21</height>
+     <x>80</x>
+     <y>50</y>
+     <width>171</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txt_parcial2">
+  <widget class="QLineEdit" name="txtParcial2">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>90</y>
-     <width>113</width>
-     <height>21</height>
+     <x>80</x>
+     <y>100</y>
+     <width>171</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txt_parcial3">
+  <widget class="QLineEdit" name="txtParcial3">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>120</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_calcular">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
+     <x>80</x>
      <y>150</y>
      <width>171</width>
-     <height>41</height>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCalcular">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>200</y>
+     <width>231</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>CALCULAR Y GUARDAR</string>
+    <string>Calcular y guardar</string>
    </property>
   </widget>
  </widget>
